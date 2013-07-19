@@ -1,11 +1,10 @@
 Installation:
 
-    git clone git://github.com/{user}/dotvim.git ~/.vim
+    git clone git://github.com/j4ckofalltrades/dotvim.git ~/.vim
 
 Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
 
 Switch to the `~/.vim` directory, and fetch submodules:
 

@@ -19,7 +19,7 @@ let g:ycm_filetype_whitelist = { 'java' : 1,
     \ 'html' : 1,
     \ 'js': 1,
     \ 'css' : 1 }
-" let g:ycm_register_as_syntastic_checker=1
+let g:ycm_register_as_syntastic_checker=1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
