@@ -14,24 +14,6 @@ nnoremap <F4> :GundoToggle<CR>
 " Powerline
 let g:Powerline_symbols="fancy"
 
-" YCM
-let g:ycm_filetype_whitelist = { 'java' : 1, 
-    \ 'html' : 1,
-    \ 'js': 1,
-    \ 'css' : 1 }
-let g:ycm_register_as_syntastic_checker=1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" Syntastic
-let g:syntastic_enable_balloons=1
-let g:syntastic_mode_map = { 'mode': 'active',
-    \ 'active_filetypes': ['java', 'html', 'css', 'js'],
-    \ 'passive_filetypes': [] }
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'
-
 " Solarized
 call togglebg#map("<F5>")
 syntax enable
