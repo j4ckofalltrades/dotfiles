@@ -1,26 +1,43 @@
-" Pathogen
+" Pathogen settings
 filetype off
 execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')
 call pathogen#helptags()
 
-" NERDTree
+" NERDTree settings
 map <F3> :NERDTreeToggle<cr>
 imap <F3> <esc>:NERDTreeToggle<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")	&& b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Gundo
+" Gundo settings
 nnoremap <F4> :GundoToggle<CR>
 
-" Powerline
-let g:Powerline_symbols="fancy"
+" vim-airline settings
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "solarized"
 
-" Solarized
+" powerline symbols
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Solarized settings
+set t_Co=256
 call togglebg#map("<F5>")
 syntax enable
 set background=dark
 colorscheme solarized
 
-" General Vim settings
+" vim-indent settings
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+set ts=4 sw=4 et
+
+" General vim settings
 syntax on
 filetype plugin indent on
 set nocompatible
@@ -53,7 +70,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
-set pastetoggle=<F12>
+set pastetoggle=<F6>
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
