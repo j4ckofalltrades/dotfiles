@@ -1,77 +1,45 @@
-" Pathogen settings
-filetype off
-execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')
+" Load ~/.vim/bundle packages
+execute pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
-" NERDTree settings
-map <F3> :NERDTreeToggle<cr>
-imap <F3> <esc>:NERDTreeToggle<cr>
+" Map NERDTree plugin to F5 key
+map <F5> :NERDTreeToggle<cr>
+imap <F5> <esc>:NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Gundo settings
-nnoremap <F4> :GundoToggle<CR>
+" Map Gundo plugin to F6 key
+nnoremap <F6> :GundoToggle<CR>
 
-" vim-airline settings
-let g:airline_powerline_fonts = 1
-let g:airline_theme = "solarized"
+" Map pastetoggle function to F7 key
+set pastetoggle=<F7> " Preserve original formatting of copied text
 
-" powerline symbols
-let g:airline_symbols = {}
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" Map vim-indent-guides plugin to F8 key
+nnoremap <F8> :IndentGuidesToggle<CR>
 
-" Solarized settings
-set t_Co=256
-call togglebg#map("<F5>")
+" Colorscheme settings
 syntax enable
+set t_Co=256
 set background=dark
 colorscheme solarized
 
-" vim-indent settings
+let g:Powerline_symbols='fancy' " Set fancy icons for powerline
+
+" Indention settings
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
-set ts=4 sw=4 et
 
-" General vim settings
-syntax on
-filetype plugin indent on
-set nocompatible
-set modelines=0
+" Tab settings
+set ts=4
+set sw=4
+set et
 
-set title
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set mouse=a " Enable mouse usage in normal mode
 
-set wrap
-set textwidth=80
-set formatoptions=qrn1
-set colorcolumn=80
-
-set encoding=utf-8
-set number
-set scrolloff=3
-set autoindent
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
+set nu " Show line numbers
+set colorcolumn=80 " Show indicator at 80 lines
 set cursorline
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
 
-set pastetoggle=<F6>
-
+" Disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
