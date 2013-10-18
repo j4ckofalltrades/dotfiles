@@ -37,7 +37,9 @@ set mouse=a " Enable mouse usage in normal mode
 
 set nu " Show line numbers
 set colorcolumn=80 " Show indicator at 80 lines
-set cursorline
+set cursorline " Highlight current line
+
+set wildmode=longest:list " Enable better command completion
 
 " Disable arrow keys
 nnoremap <up> <nop>
