@@ -22,7 +22,18 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-let g:Powerline_symbols='fancy' " Set fancy icons for powerline
+" vim-powerline settings
+let g:Powerline_symbols='fancy'
+
+" fix terminal timeout when leaving INSERT mode
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 " Indention settings
 let g:indent_guides_start_level=2
