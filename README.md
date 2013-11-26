@@ -1,4 +1,6 @@
-Installation:
+# Installation:
+
+Clone this repository to your `~/.vim` directory:
 
     git clone git://github.com/j4ckofalltrades/dotvim.git ~/.vim
 
