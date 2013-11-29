@@ -16,6 +16,15 @@ set pastetoggle=<F7> " Preserve original formatting of copied text
 " Map vim-indent-guides plugin to F8 key
 nnoremap <F8> :IndentGuidesToggle<CR>
 
+" Colorscheme settings
+syntax enable
+set t_Co=256
+set background=dark
+colorscheme solarized
+
+" vim-airline settings
+let g:airline_theme="powerlineish"
+
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -29,16 +38,9 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
-" Colorscheme settings
-syntax enable
-set t_Co=256
-set background=dark
-colorscheme solarized
-
-let g:airline_theme='powerline'
-
-
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
 
 " fix terminal timeout when leaving INSERT mode
 if ! has('gui_running')
