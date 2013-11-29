@@ -5,7 +5,8 @@ call pathogen#helptags()
 " Map NERDTree plugin to F5 key
 map <F5> :NERDTreeToggle<cr>
 imap <F5> <esc>:NERDTreeToggle<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
+            \&& b:NERDTreeType == "primary") | q | endif
 
 " Map Gundo plugin to F6 key
 nnoremap <F6> :GundoToggle<CR>
@@ -16,6 +17,12 @@ set pastetoggle=<F7> " Preserve original formatting of copied text
 " Map vim-indent-guides plugin to F8 key
 nnoremap <F8> :IndentGuidesToggle<CR>
 
+" Map <tab> and <Shift-tab> for easier buffer switching
+nnoremap <silent> <tab> :if &modifiable && !&readonly && &modified <CR>
+            \:write<CR> :endif<CR>:bnext<CR>
+nnoremap <silent> <s-tab> :if &modifiable && !&readonly && &modified <CR>
+            \:write<CR> :endif<CR>:bprevious<CR>
+
 " Colorscheme settings
 syntax enable
 set t_Co=256
@@ -25,6 +32,7 @@ colorscheme solarized
 " vim-airline settings
 let g:airline_theme="powerlineish"
 
+" set vim-airline symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
