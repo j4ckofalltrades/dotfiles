@@ -1,35 +1,32 @@
-" Load ~/.vim/bundle packages
+" load ~/.vim/bundle packages
 execute pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
-" Map NERDTree plugin to F5 key
-map <F5> :NERDTreeToggle<cr>
-imap <F5> <esc>:NERDTreeToggle<cr>
+" map NERDTree plugin to F3 key
+map <F3> :NERDTreeToggle<cr>
+imap <F3> <esc>:NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
             \&& b:NERDTreeType == "primary") | q | endif
 
-" Map Gundo plugin to F6 key
-nnoremap <F6> :GundoToggle<CR>
+" map Gundo plugin to F4 key
+nnoremap <F4> :GundoToggle<CR>
 
-" Map pastetoggle function to F7 key
-set pastetoggle=<F7> " Preserve original formatting of copied text
+" map pastetoggle function to F5 key
+set pastetoggle=<F5> " preserve original formatting of copied text
 
-" Map vim-indent-guides plugin to F8 key
-nnoremap <F8> :IndentGuidesToggle<CR>
-
-" Map <tab> and <Shift-tab> for easier buffer switching
+" map <tab> and <Shift-tab> for easier buffer switching
 nnoremap <silent> <tab> :if &modifiable && !&readonly && &modified <CR>
             \:write<CR> :endif<CR>:bnext<CR>
 nnoremap <silent> <s-tab> :if &modifiable && !&readonly && &modified <CR>
             \:write<CR> :endif<CR>:bprevious<CR>
 
-" Colorscheme settings
+" colorscheme settings
 syntax enable
 set t_Co=256
 set background=dark
 colorscheme solarized
 
-" vim-airline settings
+" set vim-airline theme
 let g:airline_theme="powerlineish"
 
 " set vim-airline symbols
@@ -37,7 +34,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" old vim-powerline symbols
+" set vim-airline symbols
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
@@ -60,24 +57,18 @@ if ! has('gui_running')
     augroup END
 endif
 
-" Indention settings
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
+set nu " show line numbers
+set colorcolumn=80 " show indicator at 80 lines
+set cursorline " highlight current line
 
-" Tab settings
-set ts=4
-set sw=4
-set et
+set wildmode=longest:list " enable better command completion
 
-set mouse=a " Enable mouse usage in normal mode
+" indention settings
+set smartindent
+set shiftwidth=4
+set tabstop=4
 
-set nu " Show line numbers
-set colorcolumn=80 " Show indicator at 80 lines
-set cursorline " Highlight current line
-
-set wildmode=longest:list " Enable better command completion
-
-" Disable arrow keys
+" disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
