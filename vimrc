@@ -58,7 +58,7 @@ if ! has('gui_running')
 endif
 
 " set excluded files and directories for Ctrl-P
-set wildignore+=*.class,*/bin/*,*/target/*,.*
+set wildignore+=*.class,*/bin/*,*/target/*
 
 set nu " show line numbers
 set colorcolumn=80 " show indicator at 80 lines
