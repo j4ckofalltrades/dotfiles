@@ -26,6 +26,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " set vim-airline theme
 let g:airline_theme="powerlineish"
 
