@@ -54,6 +54,15 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#left_sep = '⮀'
 let g:airline#extensions#tabline#left_alt_sep = '⮁'
 
+" set tmuxline symbols
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_separators = {
+    \ 'left' : '⮀',
+    \ 'left_alt': '⮁',
+    \ 'right' : '⮂',
+    \ 'right_alt' : '⮃',
+    \ 'space' : ' '}
+
 " fix terminal timeout when leaving INSERT mode
 if ! has('gui_running')
     set ttimeoutlen=10
