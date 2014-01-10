@@ -37,31 +37,22 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" set vim-airline symbols
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
+" set vim-airline powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " set vim-airline's tabline integration settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#left_sep = '⮀'
-let g:airline#extensions#tabline#left_alt_sep = '⮁'
-
-" set tmuxline symbols
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_separators = {
-    \ 'left' : '⮀',
-    \ 'left_alt': '⮁',
-    \ 'right' : '⮂',
-    \ 'right_alt' : '⮃',
-    \ 'space' : ' '}
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 
 " fix terminal timeout when leaving INSERT mode
 if ! has('gui_running')

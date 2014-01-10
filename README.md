@@ -13,3 +13,9 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+Installing the powerline font:
+
+    mkdir ~/.fonts
+    cp Droid\ Sans\ Mono\ for\ Powerline.otf ~/.fonts
+    sudo fc-cache -vf ~/.fonts
