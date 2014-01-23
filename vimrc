@@ -77,6 +77,7 @@ set wildmode=longest:list " enable better command completion
 set smartindent
 set shiftwidth=4
 set tabstop=4
+set expandtab
 
 " disable arrow keys
 nnoremap <up> <nop>
