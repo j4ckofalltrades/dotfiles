@@ -2,6 +2,12 @@
 execute pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
+" load filetype-specific indent files
+filetype indent on
+
+" enable syntax processing
+syntax enable
+
 " map NERDTree plugin to F3 key
 map <F3> :NERDTreeToggle<cr>
 imap <F3> <esc>:NERDTreeToggle<cr>
@@ -26,6 +32,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" set invisible characters
 set list
 set listchars=tab:▸\ ,eol:¬
 
