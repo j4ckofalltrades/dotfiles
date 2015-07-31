@@ -25,6 +25,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" format gitcommit messages
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 " set invisible characters
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -53,8 +56,11 @@ let g:airline_symbols.linenr = '⭡'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#left_sep = '⮀'
-let g:airline#extensions#tabline#buffer_min_count = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" enable tmuxline extension
+let g:airline#extensions#tmuxline#enabled = 0
 
 " fix terminal timeout when leaving INSERT mode
 if ! has('gui_running')
@@ -81,6 +87,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
+
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -92,15 +99,3 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-
-let g:airline#extensions#tmuxline#enabled = 0
-let g:airline#extensions#virtualenv#enabled = 1
-
-" let g:tmuxline_powerline_separators = 1
-
-" let g:tmuxline_separators = {
-"     \ 'left' : '⮀',
-"     \ 'left_alt': '⮁',
-"     \ 'right' : '⮂',
-"     \ 'right_alt' : '⮃',
-"     \ 'space' : ' '}
