@@ -64,18 +64,19 @@ let g:airline#extensions#tmuxline#enabled = 0
 
 " fix terminal timeout when leaving INSERT mode
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
 endif
 
 " set excluded files and directories for Ctrl-P
 set wildignore+=*.class,*/bin/*,*/target/*
 
 set nu " show line numbers
+set rnu " show relative line numbers"
 set colorcolumn=80 " show indicator at 80 lines
 set cursorline " highlight current line
 
@@ -86,7 +87,6 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 set expandtab
-
 
 " disable arrow keys
 nnoremap <up> <nop>
