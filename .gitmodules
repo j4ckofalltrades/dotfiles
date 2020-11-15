@@ -1,27 +1,15 @@
-[submodule "bundle/fugitive"]
-    path = bundle/fugitive
-    url = http://github.com/tpope/vim-fugitive.git
-[submodule "bundle/ctrlp"]
-    path = bundle/ctrlp
-    url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundle/gundo"]
-    path = bundle/gundo
-    url = http://github.com/sjl/gundo.vim.git
-[submodule "bundle/nerdtree"]
-    path = bundle/nerdtree
-    url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-colors-solarized"]
-    path = bundle/vim-colors-solarized
-    url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-commentary"]
-    path = bundle/vim-commentary
-    url = git://github.com/tpope/vim-commentary.git
-[submodule "bundle/vim-sensible"]
-    path = bundle/vim-sensible
-    url = https://github.com/tpope/vim-sensible.git
-[submodule "bundle/vim-airline"]
-    path = bundle/vim-airline
-    url = https://github.com/bling/vim-airline.git
-[submodule "bundle/tmuxline.vim"]
-    path = bundle/tmuxline.vim
-    url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/bundle/undotree"]
+	path = vim/bundle/undotree
+	url = git@github.com:mbbill/undotree.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
