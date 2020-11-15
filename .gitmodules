@@ -1,3 +1,6 @@
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
@@ -10,6 +13,3 @@
 [submodule "vim/bundle/undotree"]
 	path = vim/bundle/undotree
 	url = git@github.com:mbbill/undotree.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = git@github.com:ctrlpvim/ctrlp.vim.git

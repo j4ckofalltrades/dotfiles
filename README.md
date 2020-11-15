@@ -45,6 +45,7 @@ Plugins:
 - [CtrlP](https://github.com/kien/ctrlp.vim)
 - [Undotree](https://github.com/mbbill/undotree)
 - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
 
 ## [Tmux](https://github.com/powerline/powerline)
 
