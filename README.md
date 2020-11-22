@@ -27,7 +27,7 @@ Plugins:
 
 - [Powerline Gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
 
-TODO: Add other powerline plugins
+- [Powerline Docker](https://github.com/adrianmo/powerline-docker)
 
 ## [Vim](https://github.com/vim/vim)
 
@@ -47,7 +47,7 @@ Plugins:
 - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
 
-## [Tmux](https://github.com/powerline/powerline)
+## [Tmux](https://github.com/tmux/tmux)
 
 Minimal tmux configuration that plays well with Vim, setup with:
 
@@ -60,6 +60,12 @@ TODO: Add tmux plugins config
 
 ## Colorscheme
 
+- [Solarized](https://github.com/altercation/solarized)
+
+- [Solarized Color Theme for GNU ls](https://github.com/seebi/dircolors-solarized)
+
+- [Solarized Colorscheme for Guake](https://github.com/coolwanglu/guake-colors-solarized)
+
 Setup with:
 
 ```bash
@@ -71,13 +77,6 @@ $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
     && cd guake-colors-solarized \
     && ./set_dark solarized
 ```
-
-- [Solarized](https://github.com/altercation/solarized)
-
-- [Solarized Color Theme for GNU ls](https://github.com/seebi/dircolors-solarized)
-
-- [Solarized Colorscheme for Guake](https://github.com/coolwanglu/guake-colors-solarized)
-
 
 ## Misc
 
