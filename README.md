@@ -1,6 +1,6 @@
 # Dev Environment Config
 
-Config files and command-line utilities I use on personal and work machines.
+Config files and command-line utilities I use for work and play.
 
 ## [Bash](https://www.gnu.org/software/bash)
 
@@ -16,6 +16,8 @@ Command-line utils:
 - [sdkman](https://github.com/sdkman/sdkman-cli)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [pyenv](https://github.com/pyenv/pyenv)
+- [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
+- [Git branch in terminal win title](https://github.com/j4ckofalltrades/terminal-branch-win-title)
 
 ## [Powerline](https://github.com/powerline/powerline)
 
@@ -45,7 +47,6 @@ Plugins:
 - [CtrlP](https://github.com/kien/ctrlp.vim)
 - [Undotree](https://github.com/mbbill/undotree)
 - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
-- [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
 
 ## [Tmux](https://github.com/tmux/tmux)
 
@@ -72,6 +73,8 @@ Plugins:
 
 - [Solarized Colorscheme for Guake](https://github.com/coolwanglu/guake-colors-solarized)
 
+- [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
+
 Setup with:
 
 ```bash
@@ -82,16 +85,6 @@ $ ln -s .dircolors $HOME/.dircolors
 $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
     && cd guake-colors-solarized \
     && ./set_dark solarized
-```
-
-## Misc
-
-- [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
-
-Setup with:
-
-```bash
-$ ln -s .xprofile $HOME/.xprofile # sourced in .profle
 ```
 
 ## Screenshots

@@ -14,6 +14,9 @@ fi
 # solarized dirclors
 eval $(dircolors "$HOME/.dir_colors/dircolors")
 
+# git branch in terminal win title
+source "terminal-branch-win-title/branch-win-title.sh"
+
 # terminal colors
 export TERM="xterm-256color"
 
