@@ -1,8 +1,8 @@
 # Dev Environment Config
 
-Configuration files and command-line utilities I use on personal and work stuff.
+Config files and command-line utilities I use on personal and work machines.
 
-## [Bash](https://www.gnu.org/software/bash/)
+## [Bash](https://www.gnu.org/software/bash)
 
 Minimal config for bash and several command-line utilities:
 
@@ -53,10 +53,16 @@ Minimal tmux configuration that plays well with Vim, setup with:
 
 ```bash
 $ ln -s .tmux.conf $HOME/.tmux.conf
-$ tmux
+$ ln -s .tmux $HOME/.tmux
+$ tmux source $HOME/.tmux.conf
 ```
 
-TODO: Add tmux plugins config
+Plugins:
+
+- [tmux-plugin-manager](https://github.com/tmux-plugins/tpm)
+- [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
+- [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect)
+- [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)
 
 ## Colorscheme
 
@@ -81,6 +87,12 @@ $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
 ## Misc
 
 - [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
+
+Setup with:
+
+```bash
+$ ln -s .xprofile $HOME/.xprofile # sourced in .profle
+```
 
 ## Screenshots
 
