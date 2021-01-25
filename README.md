@@ -8,6 +8,7 @@ Minimal config for bash and several command-line utilities:
 
 ```bash
 $ ln -s .profile $HOME/.profile
+$ ln -s $HOME/.local/bin/branch-win-title.sh
 $ source $HOME/.profile
 ```
 
@@ -28,7 +29,6 @@ Minimal powerline config (for bash, tmux, and vim) with several plugins listed b
 Plugins:
 
 - [Powerline Gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
-
 - [Powerline Docker](https://github.com/adrianmo/powerline-docker)
 
 ## [Vim](https://github.com/vim/vim)
@@ -37,8 +37,9 @@ Minimal Vim config, setup with:
 
 ```bash
 $ git submodule update --init
+$ ln -s vim $HOME/.vim
 $ ln -s vim/.vimrc $HOME/.vimrc
-$ vi vim/.vimrc # then execute 'source vim/.vimrc'
+$ vi $HOME/.vimrc # then execute 'source vim/.vimrc'
 ```
 
 Plugins:
@@ -53,8 +54,8 @@ Plugins:
 Minimal tmux configuration that plays well with Vim, setup with:
 
 ```bash
-$ ln -s .tmux.conf $HOME/.tmux.conf
 $ ln -s .tmux $HOME/.tmux
+$ ln -s .tmux/.tmux.conf $HOME/.tmux.conf
 $ tmux source $HOME/.tmux.conf
 ```
 
@@ -68,11 +69,8 @@ Plugins:
 ## Colorscheme
 
 - [Solarized](https://github.com/altercation/solarized)
-
 - [Solarized Color Theme for GNU ls](https://github.com/seebi/dircolors-solarized)
-
 - [Solarized Colorscheme for Guake](https://github.com/coolwanglu/guake-colors-solarized)
-
 - [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
 
 Setup with:
