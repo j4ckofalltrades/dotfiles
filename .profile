@@ -7,7 +7,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # private bin
-if [[ -d "$HOME/.local/bin" ] ; then
+if [[ -d "$HOME/.local/bin" ]] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
@@ -47,6 +47,11 @@ if [[ -d "$HOME/.pyenv" ]]; then
    PATH="$HOME/.pyenv/bin:$PATH"                                                                                                                                                                                                       
    eval "$(pyenv init -)"                                                                                                                                                                                                                     
    eval "$(pyenv virtualenv-init -)"   
+fi
+
+# go
+if [[ -d "$HOME/.local/go" ]]; then
+   PATH="$HOME/.local/go/bin:$PATH"
 fi
 
 export PATH
