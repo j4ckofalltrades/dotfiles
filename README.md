@@ -31,6 +31,14 @@ Plugins:
 - [Powerline Gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
 - [Powerline Docker](https://github.com/adrianmo/powerline-docker)
 
+## [Git](https://git-scm.com)
+
+gitconfig with command aliases:
+
+```bash
+$ ln -s .gitconfig $HOME/.gitconfig
+```
+
 ## [Vim](https://github.com/vim/vim)
 
 Minimal Vim config, setup with:

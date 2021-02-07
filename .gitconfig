@@ -1,0 +1,17 @@
+[user]
+	name = Jordan Duabe
+	email = jordan.duabe@gmail.com
+[core]
+	editor = vi
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	di = diff
+	rs = restore
+	st = status -sb
+	sh = stash
+	sq = rebase -i HEAD~2
+	sw = switch
+[merge]
+	tool = meld
