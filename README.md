@@ -8,7 +8,7 @@ Minimal config for bash and several command-line utilities:
 
 ```bash
 $ ln -s .profile $HOME/.profile
-$ ln -s $HOME/.local/bin/branch-win-title.sh
+$ ln -s branch-win-title.sh $HOME/.local/bin/branch-win-title.sh
 $ source $HOME/.profile
 ```
 
@@ -37,8 +37,8 @@ Minimal Vim config, setup with:
 
 ```bash
 $ git submodule update --init
-$ ln -s vim $HOME/.vim
-$ ln -s vim/.vimrc $HOME/.vimrc
+$ ln -s .vim $HOME/.vim
+$ ln -s .vim/.vimrc $HOME/.vimrc
 $ vi $HOME/.vimrc # then execute 'source vim/.vimrc'
 ```
 
