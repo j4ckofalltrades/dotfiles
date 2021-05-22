@@ -1,10 +1,10 @@
 # Dev Environment Config
 
-Config files and command-line utilities I use for work and play.
+Small collection of command-line utilities and config files to get up and running
 
 ## [Bash](https://www.gnu.org/software/bash)
 
-Minimal config for bash and several command-line utilities:
+Config for several command-line utilities:
 
 ```bash
 $ ln -s .profile $HOME/.profile
@@ -22,7 +22,7 @@ Command-line utils:
 
 ## [Powerline](https://github.com/powerline/powerline)
 
-Minimal powerline config (for bash, tmux, and vim) with several plugins listed below, setup with:
+Powerline config (for bash, tmux, and vim) with several plugins listed below, setup with:
 
 `$ ln -s powerline $HOME/.config/powerline`
 
@@ -41,7 +41,7 @@ $ ln -s .gitconfig $HOME/.gitconfig
 
 ## [Vim](https://github.com/vim/vim)
 
-Minimal Vim config, setup with:
+Vim config with several plugins, setup with:
 
 ```bash
 $ git submodule update --init
@@ -59,7 +59,7 @@ Plugins:
 
 ## [Tmux](https://github.com/tmux/tmux)
 
-Minimal tmux configuration that plays well with Vim, setup with:
+Tmux configuration that plays well with Vim, setup with:
 
 ```bash
 $ ln -s .tmux $HOME/.tmux

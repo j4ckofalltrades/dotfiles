@@ -11,14 +11,11 @@ if [[ -d "$HOME/.local/bin" ]] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# solarized dirclors
 eval $(dircolors "$HOME/.dir_colors/dircolors")
+export TERM="xterm-256color"
 
 # git branch in terminal win title
 source "$HOME/.local/bin/branch-win-title.sh"
-
-# terminal colors
-export TERM="xterm-256color"
 
 # powerline
 $(powerline-daemon -q)
@@ -29,29 +26,29 @@ source "$(python3 -m site --user-site)/powerline/bindings/bash/powerline.sh"
 # smart caps lock
 source "$HOME/.xprofile"
 
-# sdkman
 if [[ -d "$HOME/.sdkman" ]]; then
     export SDKMAN_DIR="$HOME/.sdkman"
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
-# nvm
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
     [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
     [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 fi
 
-# pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
-   PATH="$HOME/.pyenv/bin:$PATH"                                                                                                                                                                                                       
-   eval "$(pyenv init -)"                                                                                                                                                                                                                     
+   PATH="$HOME/.pyenv/bin:$PATH"
+   eval "$(pyenv init -)"
    eval "$(pyenv virtualenv-init -)"   
 fi
 
-# go
-if [[ -d "$HOME/.local/go" ]]; then
-   PATH="$HOME/.local/go/bin:$PATH"
+if [[ -d "$HOME/.go" ]]; then
+   PATH="$HOME/.go/bin:$PATH"
+fi
+
+if [[ -d "$HOME/.kubectx" ]]; then
+   PATH="$HOME/.kubectx:$PATH"
 fi
 
 export PATH
