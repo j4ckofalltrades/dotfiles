@@ -28,8 +28,9 @@ Powerline config (for bash, tmux, and vim) with several plugins listed below, se
 
 Plugins:
 
-- [Powerline Gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
-- [Powerline Docker](https://github.com/adrianmo/powerline-docker)
+- [powerline-gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
+- [powerline-docker](https://github.com/adrianmo/powerline-docker)
+- [powerline-k8s](https:://github.com/j4ckofalltrades/powerline-k8s)
 
 ## [Git](https://git-scm.com)
 

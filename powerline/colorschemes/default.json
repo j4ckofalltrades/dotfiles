@@ -65,6 +65,16 @@
 		"gitstatus_changed":          { "fg": "mediumorange",    "bg": "gray2", "attrs": [] },
 		"gitstatus_untracked":        { "fg": "brightestorange", "bg": "gray2", "attrs": [] },
 		"gitstatus_stashed":          { "fg": "darkblue",        "bg": "gray2", "attrs": [] },
-		"gitstatus:divider":          { "fg": "gray8",           "bg": "gray2", "attrs": [] }
+		"gitstatus:divider":          { "fg": "gray8",           "bg": "gray2", "attrs": [] },
+        "docker":                     { "fg": "gray8",           "bg": "darkestblue", "attrs": [] },
+        "docker_running":             { "fg": "green",           "bg": "darkestblue", "attrs": [] },
+        "docker_paused":              { "fg": "brightestorange", "bg": "darkestblue", "attrs": [] },
+        "docker_exited":              { "fg": "brightred",       "bg": "darkestblue", "attrs": [] },
+        "docker_restarting":          { "fg": "gray10",          "bg": "darkestblue", "attrs": [] },
+        "docker:divider":             { "fg": "gray4",           "bg": "darkestblue", "attrs": [] },
+        "k8s":                        { "fg": "gray8",           "bg": "darkestblue", "attrs": [] },
+        "k8s_context":                { "fg": "green",           "bg": "darkestblue", "attrs": [] },
+        "k8s_namespace":              { "fg": "brightred",       "bg": "darkestblue", "attrs": [] },
+        "k8s:divider":                { "fg": "gray4",           "bg": "darkestblue", "attrs": [] }
 	}
 }
