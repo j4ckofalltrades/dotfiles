@@ -57,8 +57,8 @@
 		"docker_restarting":          { "fg": "gray10",          "bg": "darkestblue", "attrs": [] },
 		"docker:divider":             { "fg": "gray4",           "bg": "darkestblue", "attrs": [] },
 		"k8s":                        { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
-        "k8s_context":                { "fg": "solarized:red",   "bg": "solarized:base02", "attrs": [] },
-        "k8s_namespace":              { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
-        "k8s:divider":                { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] }
+        	"k8s_context":                { "fg": "solarized:red",   "bg": "solarized:base02", "attrs": [] },
+        	"k8s_namespace":              { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
+        	"k8s:divider":                { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] }
 	}
 }
