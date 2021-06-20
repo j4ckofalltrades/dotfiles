@@ -13,9 +13,9 @@
 [submodule ".vim/bundle/undotree"]
 	path = .vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule "terminal-branch-win-title"]
-	path = terminal-branch-win-title
-	url = https://github.com/j4ckofalltrades/terminal-branch-win-title
+[submodule "git-branch-win-title"]
+	path = git-branch-win-title
+	url = https://github.com/j4ckofalltrades/git-branch-win-title
 [submodule "tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git

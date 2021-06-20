@@ -18,7 +18,7 @@ Command-line utils:
 - [nvm](https://github.com/nvm-sh/nvm)
 - [pyenv](https://github.com/pyenv/pyenv)
 - [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
-- [Git branch in terminal win title](https://github.com/j4ckofalltrades/terminal-branch-win-title)
+- [Git branch in win title](https://github.com/j4ckofalltrades/git-branch-win-title)
 
 ## [Powerline](https://github.com/powerline/powerline)
 
