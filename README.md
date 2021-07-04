@@ -1,14 +1,16 @@
 # Dev Environment Config
 
-Small collection of command-line utilities and config files to get up and running
+Config files and command-line utilities
 
 ## [Bash](https://www.gnu.org/software/bash)
 
 Config for several command-line utilities:
 
-```bash
-$ ln -s .profile $HOME/.profile
+```sh
+$ ln -s .dircolors $HOME/.dircolors
 $ ln -s branch-win-title.sh $HOME/.local/bin/branch-win-title.sh
+$ ln -s .xprofile $HOME/.xprofile
+$ ln -s .profile $HOME/.profile
 $ source $HOME/.profile
 ```
 
@@ -24,27 +26,25 @@ Command-line utils:
 
 Powerline config (for bash, tmux, and vim) with several plugins listed below, setup with:
 
-`$ ln -s powerline $HOME/.config/powerline`
+`$ ln -s config/powerline $HOME/.config/powerline`
 
 Plugins:
 
 - [powerline-gitstatus](https://github.com/jaspernbrouwer/powerline-gitstatus)
 - [powerline-docker](https://github.com/adrianmo/powerline-docker)
-- [powerline-k8s](https:://github.com/j4ckofalltrades/powerline-k8s)
+- [powerline-k8s](https://github.com/j4ckofalltrades/powerline-k8s)
 
 ## [Git](https://git-scm.com)
 
 gitconfig with command aliases:
 
-```bash
-$ ln -s .gitconfig $HOME/.gitconfig
-```
+`$ ln -s .gitconfig $HOME/.gitconfig`
 
 ## [Vim](https://github.com/vim/vim)
 
 Vim config with several plugins, setup with:
 
-```bash
+```sh
 $ git submodule update --init
 $ ln -s .vim $HOME/.vim
 $ ln -s .vim/.vimrc $HOME/.vimrc
@@ -62,7 +62,7 @@ Plugins:
 
 Tmux configuration that plays well with Vim, setup with:
 
-```bash
+```sh
 $ ln -s .tmux $HOME/.tmux
 $ ln -s .tmux/.tmux.conf $HOME/.tmux.conf
 $ tmux source $HOME/.tmux.conf
@@ -84,15 +84,25 @@ Plugins:
 
 Setup with:
 
-```bash
-# solarized for ls
-$ ln -s .dircolors $HOME/.dircolors
-
+```sh
 # solarized colors for guake
 $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
     && cd guake-colors-solarized \
     && ./set_dark solarized
 ```
+
+## Touchpad Gestures
+
+| Gesture     | Command               | Action                               |
+| ----------- | --------------------- | ------------------------------------ |
+| swipe up    | xdotool key super     | Toggle Activities Overview (Pop!_OS) |
+| swipe left  | xdotool key alt+Right | Back (Browser navigation)            |
+| swipe right | xdotool key alt+Left  | Forward (Browser navigation)         |
+
+Configure touchpad gestures with [libinput-gestures](https://github.com/bulletmark/libinput-gestures), setup with:
+
+
+`ln -s config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf`
 
 ## Screenshots
 
