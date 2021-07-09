@@ -93,14 +93,25 @@ $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
 
 ## Touchpad Gestures
 
-| Gesture     | Command               | Action                               |
-| ----------- | --------------------- | ------------------------------------ |
-| swipe up    | xdotool key super     | Toggle Activities Overview (Pop!_OS) |
-| swipe left  | xdotool key alt+Right | Back (Browser navigation)            |
-| swipe right | xdotool key alt+Left  | Forward (Browser navigation)         |
+### Swipe Gestures
+
+| Gesture              | Command                        |  Action               |
+| -------------------- | ------------------------------ | --------------------- |
+| 3-finger swipe up    | xdotool key super      	| Show all windows      |
+| 3-finger swipe down  | xdotool key super     		| Close Exposé          |
+| 3-finger swipe left  | xdotool key alt+Right 		| Back (Browser nav)    |
+| 3-finger swipe right | xdotool key alt+Left  		| Forward (Browser nav) |
+| 4-finger swipe up    | xdotool key control+super+Down	| Next Desktop 	        |
+| 4-finger swipe down  | xdotool key control+super+Up   | Previous Desktop      |
+
+### Pinch Gestures
+
+| Gesture   | Command                   | Action   |
+| --------- | ------------------------- | -------- |
+| Pinch in  | xdotool key control+Plus  | Zoom in  |
+| Pinch out | xdotool key control+Minus | Zoom out |
 
 Configure touchpad gestures with [libinput-gestures](https://github.com/bulletmark/libinput-gestures), setup with:
-
 
 `ln -s config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf`
 
