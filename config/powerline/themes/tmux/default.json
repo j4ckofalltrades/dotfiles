@@ -2,11 +2,13 @@
 	"segments": {
 		"right": [
 			{
-				"function": "powerline.segments.common.sys.uptime",
-				"priority": 50
+				"function": "powerline_docker.docker"
 			},
 			{
-				"function": "powerline.segments.common.sys.system_load",
+				"function": "powerline_k8s.k8s"
+			},
+			{
+				"function": "powerline.segments.common.sys.uptime",
 				"priority": 50
 			},
 			{

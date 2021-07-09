@@ -28,14 +28,6 @@
 			{
 				"function": "powerline_gitstatus.gitstatus",
 				"priority": 10
-			},
-			{
-    				"function": "powerline_docker.docker",
-    				"priority": 30
-			},
-			{
-				"function": "powerline_k8s.k8s",
-    				"priority": 30
 			}
 		]
 	}

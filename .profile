@@ -21,7 +21,9 @@ source "$HOME/.local/bin/branch-win-title.sh"
 $(powerline-daemon -q)
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-source "$(python3 -m site --user-site)/powerline/bindings/bash/powerline.sh"
+POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
+source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
+export POWERLINE_BASE_DIR
 
 # smart caps lock
 source "$HOME/.xprofile"
@@ -48,6 +50,8 @@ if [[ -d "$HOME/.go" ]]; then
 fi
 
 if [[ -d "$HOME/.kubectx" ]]; then
+  source "$HOME/.kubectx/completion/kubens.bash"
+  source "$HOME/.kubectx/completion/kubectx.bash"
   PATH="$HOME/.kubectx:$PATH"
 fi
 
