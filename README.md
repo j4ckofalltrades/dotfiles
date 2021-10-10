@@ -20,7 +20,7 @@ Command-line utils:
 - [nvm](https://github.com/nvm-sh/nvm)
 - [pyenv](https://github.com/pyenv/pyenv)
 - [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
-- [Git branch in win title](https://github.com/j4ckofalltrades/git-branch-win-title)
+- [git-branch-win-title](https://github.com/j4ckofalltrades/git-branch-win-title)
 
 ## [Powerline](https://github.com/powerline/powerline)
 
@@ -54,9 +54,10 @@ $ vi $HOME/.vimrc # then execute 'source vim/.vimrc'
 Plugins:
 
 - [NERDTree](https://github.com/preservim/nerdtree)
-- [CtrlP](https://github.com/kien/ctrlp.vim)
-- [Undotree](https://github.com/mbbill/undotree)
-- [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [ctrlp](https://github.com/ctrlp/ctrlp.vim)
+- [undotree](https://github.com/mbbill/undotree)
+- [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [vim-startify](https://github.com/mhinz/vim-startify)
 
 ## [Tmux](https://github.com/tmux/tmux)
 
@@ -77,10 +78,10 @@ Plugins:
 
 ## Colorscheme
 
-- [Solarized](https://github.com/altercation/solarized)
-- [Solarized Color Theme for GNU ls](https://github.com/seebi/dircolors-solarized)
-- [Solarized Colorscheme for Guake](https://github.com/coolwanglu/guake-colors-solarized)
-- [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized)
+- [solarized](https://github.com/altercation/solarized)
+- [dircolors-solarized](https://github.com/seebi/dircolors-solarized)
+- [guake-colors-solarized](https://github.com/coolwanglu/guake-colors-solarized)
+- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 Setup with:
 
@@ -117,4 +118,4 @@ Configure touchpad gestures with [libinput-gestures](https://github.com/bulletma
 
 ## Screenshots
 
-![](env.png)
+![](assets/env.png)
