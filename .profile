@@ -45,14 +45,32 @@ if [[ -d "$HOME/.pyenv" ]]; then
   eval "$(pyenv virtualenv-init -)"   
 fi
 
+if [[ -d "$HOME/.rbenv" ]]; then
+  PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
 if [[ -d "$HOME/.go" ]]; then
   PATH="$HOME/.go/bin:$PATH"
+fi
+
+if [[ -d "$HOME/.cargo" ]]; then
+  PATH="$HOME/.cargo/bin:$PATH"
+  source "$HOME/.cargo/env"
 fi
 
 if [[ -d "$HOME/.kubectx" ]]; then
   source "$HOME/.kubectx/completion/kubens.bash"
   source "$HOME/.kubectx/completion/kubectx.bash"
   PATH="$HOME/.kubectx:$PATH"
+fi
+
+if [[ -f "$HOME.gcloud/path.bash.inc" ]]; then
+  source "$HOME/.gcloud/path.bash.inc"
+fi
+
+if [[ -f "$HOME/.gcloud/completion.bash.inc" ]]; then
+  source "$HOME/.gcloud/completion.bash.inc"
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach.
