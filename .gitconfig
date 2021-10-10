@@ -1,8 +1,10 @@
 [user]
 	name = Jordan Duabe
 	email = jordan.duabe@gmail.com
+
 [core]
 	editor = vi
+
 [alias]
 	br = branch
 	ci = commit
@@ -13,5 +15,30 @@
 	sh = stash
 	sq = rebase -i HEAD~2
 	sw = switch
+
 [merge]
 	tool = meld
+
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+
+[delta]
+	features = side-by-side line-numbers decorations
+	syntax-theme = Solarized (dark)
+	plus-style = "syntax #003800"
+	minus-style = "syntax #3f0001"
+
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+	hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+	line-numbers-left-style = cyan
+	line-numbers-right-style = cyan
+	line-numbers-minus-style = 124
+	line-numbers-plus-style = 28
