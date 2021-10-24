@@ -1,42 +1,41 @@
-# if running bash
 if [[ -n "$BASH_VERSION" ]]; then
-  # include .bashrc if it exists
-  if [[ -f "$HOME/.bashrc" ]]; then
-    . "$HOME/.bashrc"
-  fi
+  [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 fi
 
-# private bin
-if [[ -d "$HOME/.local/bin" ]] ; then
-  PATH="$HOME/.local/bin:$PATH"
-fi
+PLATFORM="$(uname -s)"
 
-eval $(dircolors "$HOME/.dir_colors/dircolors")
+[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
+[[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
+
+[[ -f "$HOME/.dircolors/dircolors" ]] && eval $(dircolors "$HOME/.dircolors/dircolors")
 export TERM="xterm-256color"
 
 # git branch in terminal win title
-source "$HOME/.local/bin/branch-win-title.sh"
+[[ -f "$HOME/.local/bin/branch-win-title.sh" ]] && source "$HOME/.local/bin/branch-win-title.sh"
 
 # powerline
-$(powerline-daemon -q)
+[[ "$PLATFORM" = "Darwin" ]] && PATH="$(python3 -m site --user-base)/bin:$PATH"
+
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
-source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
 export POWERLINE_BASE_DIR
 
+source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
+$(powerline-daemon -q)
+
 # smart caps lock
-source "$HOME/.xprofile"
+[[ $PLATFORM = "Linux" ]] && source "$HOME/.xprofile"
 
 if [[ -d "$HOME/.sdkman" ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+  [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 if [[ -d "$HOME/.nvm" ]]; then
   export NVM_DIR="$HOME/.nvm"
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+  [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [[ -f "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 fi
 
 if [[ -d "$HOME/.pyenv" ]]; then
@@ -50,9 +49,7 @@ if [[ -d "$HOME/.rbenv" ]]; then
   eval "$(rbenv init -)"
 fi
 
-if [[ -d "$HOME/.go" ]]; then
-  PATH="$HOME/.go/bin:$PATH"
-fi
+[[ -d "$HOME/.go" ]] && PATH="$HOME/.go/bin:$PATH"
 
 if [[ -d "$HOME/.cargo" ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
@@ -65,19 +62,20 @@ if [[ -d "$HOME/.kubectx" ]]; then
   PATH="$HOME/.kubectx:$PATH"
 fi
 
-if [[ -f "$HOME.gcloud/path.bash.inc" ]]; then
-  source "$HOME/.gcloud/path.bash.inc"
-fi
-
-if [[ -f "$HOME/.gcloud/completion.bash.inc" ]]; then
-  source "$HOME/.gcloud/completion.bash.inc"
-fi
+[[ -s "$HOME/.gcloud/path.bash.inc" ]] && source "$HOME/.gcloud/path.bash.inc"
+[[ -s "$HOME/.gcloud/completion.bash.inc" ]] && source "$HOME/.gcloud/completion.bash.inc"
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach.
 # if attachment fails, start a new session
 # https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
-if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]]; then
-  [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
+if [[ -x "$(command -v tmux)" ]]; then
+  if [[ $PLATFORM = "Darwin" ]]; then
+    [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
+  else
+    [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
+  fi
 fi
+
+[[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export PATH
