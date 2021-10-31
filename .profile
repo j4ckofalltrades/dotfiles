@@ -7,7 +7,10 @@ PLATFORM="$(uname -s)"
 [[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
 
-[[ -f "$HOME/.dircolors/dircolors" ]] && eval $(dircolors "$HOME/.dircolors/dircolors")
+if [[ -f "$HOME/.dircolors/dircolors" ]]; then
+  [[ "$PLATFORM" = "Darwin" ]] && eval $(gdircolors "$HOME/.dircolors/dircolors")
+  [[ "$PLATFORM" = "Linux" ]] && eval $(dircolors "$HOME/.dircolors/dircolors")
+fi
 export TERM="xterm-256color"
 
 # git branch in terminal win title
@@ -29,7 +32,7 @@ $(powerline-daemon -q)
 
 if [[ -d "$HOME/.sdkman" ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+  [[ -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 fi
 
 if [[ -d "$HOME/.nvm" ]]; then
@@ -62,18 +65,15 @@ if [[ -d "$HOME/.kubectx" ]]; then
   PATH="$HOME/.kubectx:$PATH"
 fi
 
-[[ -s "$HOME/.gcloud/path.bash.inc" ]] && source "$HOME/.gcloud/path.bash.inc"
-[[ -s "$HOME/.gcloud/completion.bash.inc" ]] && source "$HOME/.gcloud/completion.bash.inc"
+[[ -f "$HOME/.gcloud/path.bash.inc" ]] && source "$HOME/.gcloud/path.bash.inc"
+[[ -f "$HOME/.gcloud/completion.bash.inc" ]] && source "$HOME/.gcloud/completion.bash.inc"
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach.
 # if attachment fails, start a new session
 # https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
 if [[ -x "$(command -v tmux)" ]]; then
-  if [[ $PLATFORM = "Darwin" ]]; then
-    [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
-  else
-    [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
-  fi
+  [[ $PLATFORM = "Darwin" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
+  [[ $PLATFORM = "Linux" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
 fi
 
 [[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
