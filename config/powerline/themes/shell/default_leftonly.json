@@ -28,7 +28,7 @@
 			{
 				"function": "powerline_gitstatus.gitstatus",
 				"priority": 10
-			}
+			}	
 		]
 	}
 }

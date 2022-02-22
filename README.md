@@ -19,7 +19,6 @@ Command-line utils:
 - [sdkman](https://github.com/sdkman/sdkman-cli)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [pyenv](https://github.com/pyenv/pyenv)
-- [Smart Caps Lock](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e)
 - [git-branch-win-title](https://github.com/j4ckofalltrades/git-branch-win-title)
 
 ## [Powerline](https://github.com/powerline/powerline)
@@ -91,30 +90,6 @@ $ git clone https://github.com/coolwanglu/guake-colors-solarized.git \
     && cd guake-colors-solarized \
     && ./set_dark solarized
 ```
-
-## Touchpad Gestures
-
-### Swipe Gestures
-
-| Gesture              | Command                        |  Action               |
-| -------------------- | ------------------------------ | --------------------- |
-| 3-finger swipe up    | xdotool key super      	| Show all windows      |
-| 3-finger swipe down  | xdotool key super     		| Close Exposé          |
-| 3-finger swipe left  | xdotool key alt+Right 		| Back (Browser nav)    |
-| 3-finger swipe right | xdotool key alt+Left  		| Forward (Browser nav) |
-| 4-finger swipe up    | xdotool key control+super+Down	| Next Desktop 	        |
-| 4-finger swipe down  | xdotool key control+super+Up   | Previous Desktop      |
-
-### Pinch Gestures
-
-| Gesture   | Command                   | Action   |
-| --------- | ------------------------- | -------- |
-| Pinch in  | xdotool key control+Plus  | Zoom in  |
-| Pinch out | xdotool key control+Minus | Zoom out |
-
-Configure touchpad gestures with [libinput-gestures](https://github.com/bulletmark/libinput-gestures), setup with:
-
-`ln -s config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf`
 
 ## Screenshots
 

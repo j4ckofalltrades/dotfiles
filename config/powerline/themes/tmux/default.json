@@ -2,6 +2,13 @@
 	"segments": {
 		"right": [
 			{
+				"function": "powerline_keebs.keebs",
+				"priority": 30,
+				"args": {
+					"no_dongles": true
+				}
+			},	
+			{
 				"function": "powerline_docker.docker"
 			},
 			{
@@ -24,7 +31,7 @@
 			},
 			{
 				"function": "powerline.segments.common.net.hostname"
-			}
+			}		
 		]
 	}
 }

@@ -27,9 +27,6 @@ export POWERLINE_BASE_DIR
 source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
 $(powerline-daemon -q)
 
-# smart caps lock
-[[ $PLATFORM = "Linux" ]] && source "$HOME/.xprofile"
-
 if [[ -d "$HOME/.sdkman" ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
