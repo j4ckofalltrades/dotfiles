@@ -6,12 +6,18 @@ PLATFORM="$(uname -s)"
 
 [[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
+if [[ "$PLATFORM" = "Darwin" ]]; then
+  [[ -f "opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 if [[ -f "$HOME/.dircolors/dircolors" ]]; then
-  [[ "$PLATFORM" = "Darwin" ]] && eval $(gdircolors "$HOME/.dircolors/dircolors")
   [[ "$PLATFORM" = "Linux" ]] && eval $(dircolors "$HOME/.dircolors/dircolors")
 fi
 export TERM="xterm-256color"
+
+if [[ "$PLATFORM" = "Darwin" && -f "$(brew --prefix)/etc/bash_completion" ]]; then
+  source "$(brew --prefix)/etc/bash_completion"
+fi
 
 # git branch in terminal win title
 [[ -f "$HOME/.local/bin/branch-win-title.sh" ]] && source "$HOME/.local/bin/branch-win-title.sh"
@@ -21,7 +27,12 @@ export TERM="xterm-256color"
 
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
+if [[ "$PLATFORM" = "Darwin" ]]; then
+  POWERLINE_BASE_DIR="$HOME/.local/lib/python3.9/site-packages/powerline"
+else
+  POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
+fi
+
 export POWERLINE_BASE_DIR
 
 source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
@@ -34,6 +45,12 @@ fi
 
 if [[ -d "$HOME/.nvm" ]]; then
   export NVM_DIR="$HOME/.nvm"
+  if [[ $PLATFORM = "Darwin" ]]; then
+	  NVM_DIR_HOMEBREW="$(brew --prefix)/opt/nvm"
+    [[ -f "$NVM_DIR_HOMEBREW/nvm.sh" ]] && source "$NVM_DIR_HOMEBREW/nvm.sh"
+    [[ -f "$NVM_DIR_HOMEBREW/etc/bash_completion.d/nvm" ]] && source "$NVM_DIR_HOMEBREW/etc/bash_completion.d/nvm"
+  fi
+
   [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
   [[ -f "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 fi
@@ -54,8 +71,14 @@ fi
 
 if [[ -d "$HOME/.cargo" ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
-  source "$HOME/.cargo/env"
 fi
+source "$HOME/.cargo/env"
+
+[[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
+
+eval $(thefuck --alias)
+
+export GPG_TTY=$(tty)
 
 if [[ -d "$HOME/.kubectx" ]]; then
   source "$HOME/.kubectx/completion/kubens.bash"
@@ -73,7 +96,5 @@ if [[ -x "$(command -v tmux)" ]]; then
   [[ $PLATFORM = "Darwin" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
   [[ $PLATFORM = "Linux" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
 fi
-
-[[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export PATH

@@ -1,6 +1,6 @@
 if [[ $(uname -s) = "Darwin" ]]; then
-  alias ls='gls --color=auto'
-  alias ll='ls -la'
+  alias ls='ls -G'
+  alias ll='ls -laG'
 fi
 
 # k8s
