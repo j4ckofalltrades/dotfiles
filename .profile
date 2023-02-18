@@ -97,4 +97,6 @@ if [[ -x "$(command -v tmux)" ]]; then
   [[ $PLATFORM = "Linux" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && { tmux attach || tmux; } >/dev/null 2>&1
 fi
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 export PATH

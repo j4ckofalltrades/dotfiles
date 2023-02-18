@@ -4,6 +4,7 @@ if [[ $(uname -s) = "Darwin" ]]; then
 fi
 
 # k8s
-alias kc='kubectl'
-alias kcx='kubectx'
+alias k='kubectl'
+complete -o default -F __start_kubectl k
+alias kctx='kubectx'
 alias kns='kubens'
