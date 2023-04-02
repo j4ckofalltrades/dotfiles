@@ -57,10 +57,17 @@
 		"docker_restarting":          { "fg": "gray10",          "bg": "darkestblue", "attrs": [] },
 		"docker:divider":             { "fg": "gray4",           "bg": "darkestblue", "attrs": [] },
 		"k8s":                        { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
-        "k8s_context":                { "fg": "solarized:red",   "bg": "solarized:base02", "attrs": [] },
-        "k8s_namespace":              { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
-        "k8s:divider":                { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] },
+        	"k8s_context":                { "fg": "solarized:red",   "bg": "solarized:base02", "attrs": [] },
+        	"k8s_namespace":              { "fg": "solarized:blue",  "bg": "solarized:base02", "attrs": [] },
+        	"k8s:divider":                { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] },
 		"keebs":                      { "fg": "solarized:base3", "bg": "solarized:base01", "attrs": ["bold"] },
-        "keebs:divider":              { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] }
+        	"keebs:divider":              { "fg": "gray4",           "bg": "solarized:base02", "attrs": [] },
+		"podman":                     { "fg": "gray8",           "bg": "darkestpurple", "attrs": [] },
+		"podman_created":             { "fg": "yellow",          "bg": "darkestpurple", "attrs": [] },
+		"podman_exited":              { "fg": "brightred",       "bg": "darkestpurple", "attrs": ["bold"] },
+		"podman_paused":              { "fg": "brightestorange", "bg": "darkestpurple", "attrs": ["bold"] },
+		"podman_running":             { "fg": "green",           "bg": "darkestpurple", "attrs": [] },
+		"podman_unknown":             { "fg": "gray10",          "bg": "darkestpurple", "attrs": [] },
+		"podman:divider":             { "fg": "gray4",           "bg": "darkestpurple", "attrs": [] }
 	}
 }

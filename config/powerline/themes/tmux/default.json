@@ -3,34 +3,25 @@
 		"right": [
 			{
 				"function": "powerline_keebs.keebs",
-				"priority": 30,
+				"priority": 10,
 				"args": {
 					"no_dongles": true
 				}
 			},	
 			{
-				"function": "powerline_docker.docker"
+				"function": "powerline_docker.docker",
+				"priority": 20
 			},
 			{
-				"function": "powerline_k8s.k8s"
-			},
-			{
-				"function": "powerline.segments.common.sys.uptime",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.common.time.date"
-			},
-			{
-				"function": "powerline.segments.common.time.date",
-				"name": "time",
+				"function": "powerline_podman.podman",
+				"priority": 30,
 				"args": {
-					"format": "%H:%M",
-					"istime": true
+					"ignore_states": ["exited"]
 				}
 			},
 			{
-				"function": "powerline.segments.common.net.hostname"
+				"function": "powerline_k8s.k8s",
+				"priority": 40
 			}
 		]
 	}
