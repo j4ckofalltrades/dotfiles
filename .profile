@@ -5,6 +5,7 @@ fi
 PLATFORM="$(uname -s)"
 
 [[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
+[[ -s "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
 if [[ "$PLATFORM" = "Darwin" ]]; then
   [[ -f "opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -15,28 +16,26 @@ if [[ -f "$HOME/.dircolors/dircolors" ]]; then
 fi
 export TERM="xterm-256color"
 
-if [[ "$PLATFORM" = "Darwin" && -f "$(brew --prefix)/etc/bash_completion" ]]; then
-  source "$(brew --prefix)/etc/bash_completion"
-fi
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # git branch in terminal win title
 [[ -f "$HOME/.local/bin/branch-win-title.sh" ]] && source "$HOME/.local/bin/branch-win-title.sh"
 
-# powerline
-[[ "$PLATFORM" = "Darwin" ]] && PATH="$(python3 -m site --user-base)/bin:$PATH"
 
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-if [[ "$PLATFORM" = "Darwin" ]]; then
-  POWERLINE_BASE_DIR="$HOME/.local/lib/python3.9/site-packages/powerline"
-else
-  POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
-fi
-
+POWERLINE_BASE_DIR="$(python3 -m site --user-site)/powerline"
 export POWERLINE_BASE_DIR
 
-source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
 $(powerline-daemon -q)
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source "$POWERLINE_BASE_DIR/bindings/bash/powerline.sh"
+
+if [[ -d "$HOME/.pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 
 if [[ -d "$HOME/.sdkman" ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
@@ -46,8 +45,8 @@ fi
 if [[ -d "$HOME/.nvm" ]]; then
   export NVM_DIR="$HOME/.nvm"
   if [[ $PLATFORM = "Darwin" ]]; then
-	  NVM_DIR_HOMEBREW="$(brew --prefix)/opt/nvm"
-    [[ -f "$NVM_DIR_HOMEBREW/nvm.sh" ]] && source "$NVM_DIR_HOMEBREW/nvm.sh"
+    NVM_DIR_HOMEBREW="$(brew --prefix)/opt/nvm"
+    [[ -f "$NVM_DIR_HOMEBREW/nvm.sh" ]] && source "$NVM_DIR_HOMEBREW/nvm.sh" --no-use
     [[ -f "$NVM_DIR_HOMEBREW/etc/bash_completion.d/nvm" ]] && source "$NVM_DIR_HOMEBREW/etc/bash_completion.d/nvm"
   fi
 
@@ -55,28 +54,13 @@ if [[ -d "$HOME/.nvm" ]]; then
   [[ -f "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 fi
 
-if [[ -d "$HOME/.pyenv" ]]; then
-  PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"   
-fi
-
-if [[ -d "$HOME/.rbenv" ]]; then
-  PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
 
 [[ -d "$HOME/.go" ]] && PATH="$HOME/.go/bin:$PATH"
 
 if [[ -d "$HOME/.cargo" ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
+  source "$HOME/.cargo/env"
 fi
-source "$HOME/.cargo/env"
-
-[[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
-
-eval $(thefuck --alias)
 
 export GPG_TTY=$(tty)
 
@@ -98,5 +82,10 @@ if [[ -x "$(command -v tmux)" ]]; then
 fi
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+[[ "$PLATFORM" = "Darwin" ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
+
+eval "$(zoxide init bash)"
+eval "$(thefuck --alias)"
 
 export PATH

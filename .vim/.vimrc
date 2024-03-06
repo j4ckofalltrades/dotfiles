@@ -25,8 +25,7 @@ python3 del powerline_setup
 
 " shortcut mappings
 map <F1> :NERDTreeToggle<CR>
-map <F2> :CtrlP <CR>
-map <F3> :UndotreeToggle<CR>
+map <F2> :UndotreeToggle<CR>
 
 " split windows
 set splitbelow

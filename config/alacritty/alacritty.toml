@@ -1,0 +1,19 @@
+import = [
+    "~/.config/alacritty/themes/themes/solarized_dark.toml"
+]
+
+[font]
+size = 13.5
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
