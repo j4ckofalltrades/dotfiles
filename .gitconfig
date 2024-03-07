@@ -1,44 +1,83 @@
 [user]
-	name = Jordan Duabe
-	email = jordan.duabe@gmail.com
+  name = Jordan Duabe
+  email = me@jduabe.dev
 
-[core]
-	editor = vi
+[init]
+  defaultBranch = main
+
+[help]
+  autoCorrect = prompt
 
 [alias]
-	br = branch
-	ci = commit
-	co = checkout
-	di = diff
-	rs = restore
-	st = status -sb
-	sh = stash
-	sq = rebase -i HEAD~2
-	sw = switch
+  br = branch
+  ci = commit
+  di = diff
+  dis = diff --staged
+  lg = log --oneline --graph --abbrev-commit --date=relative
+  rs = restore
+  rss = restore --staged
+  st = status -sb
+  sh = stash
+  sq = rebase -i HEAD~2
+  sw = switch
+
+[core]
+  editor = vi
+  pager = delta
 
 [merge]
-	tool = meld
-
-[pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
+  conflictstyle = diff3
 
 [delta]
-	features = side-by-side line-numbers decorations
-	syntax-theme = Solarized (dark)
-	plus-style = "syntax #003800"
-	minus-style = "syntax #3f0001"
+  features = side-by-side unobtrusive-line-numbers decorations
+  whitespace-error-style = 22 reverse
+  syntax-theme = Solarized (dark)
+  plus-style = "syntax #003800"
+  minus-style = "syntax #3f0001"
+  navigate = true
+
+[delta "unobtrusive-line-numbers"]
+  line-numbers = true
+  line-numbers-minus-style = "#444444"
+  line-numbers-zero-style = "#444444"
+  line-numbers-plus-style = "#444444"
+  line-numbers-left-format = "{nm:>4}┊"
+  line-numbers-right-format = "{np:>4}│"
+  line-numbers-left-style = blue
+  line-numbers-right-style = blue
 
 [delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
-	hunk-header-decoration-style = cyan box ul
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = yellow box
 
-[delta "line-numbers"]
-	line-numbers-left-style = cyan
-	line-numbers-right-style = cyan
-	line-numbers-minus-style = 124
-	line-numbers-plus-style = 28
+[pull]
+  rebase = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[diff]
+  colorMoved = default
+
+[commit]
+  gpgSign = true
+
+[tag]
+  gpgSign = true
+
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+
+[rerere]
+  enabled = true
+
+[fetch]
+  prune = true
+
+[push]
+  autoSetupRemote = true
